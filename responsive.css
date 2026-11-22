@@ -1,0 +1,142 @@
+/* responsive.css — التجاوب مع الشاشات (كمبيوتر / لوحي / هاتف) */
+
+@media (max-width: 1280px) {
+  .pgrid { grid-template-columns: minmax(0, 1fr) 310px; }
+  .actions4 { grid-template-columns: repeat(2, 1fr); }
+  .totals-row { grid-template-columns: 130px 130px minmax(0, 1fr); }
+}
+
+@media (max-width: 1100px) {
+  .app { grid-template-columns: 210px minmax(0, 1fr); }
+  .sb-logo .logo-box.lg { width: 110px; height: 110px; border-radius: 22px; }
+  .nav a { font-size: 15px; padding: 11px 12px; gap: 10px; }
+  .pgrid { grid-template-columns: minmax(0, 1fr) 290px; gap: 14px; }
+  .content { padding: 16px 14px 36px; }
+  .tb-brand h1 { font-size: 26px; }
+}
+
+/* ===================== الهاتف والأجهزة اللوحية الصغيرة ===================== */
+@media (max-width: 900px) {
+  body { font-size: 15px; }
+
+  .app { display: block; }
+
+  /* القائمة الجانبية تتحول إلى قائمة منزلقة */
+  .sidebar { position: fixed; top: 0; bottom: 0; left: 0; width: min(300px, 84vw); height: auto; transform: translateX(-104%); transition: transform .25s ease; box-shadow: 8px 0 30px rgba(0, 0, 0, .3); padding-top: calc(18px + env(safe-area-inset-top)); }
+  .app.menu-open .sidebar { transform: none; }
+
+  /* شريط الهاتف */
+  .topbar { display: none; }
+  .mbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--dg); color: #fff; padding: 10px 14px; padding-top: calc(10px + env(safe-area-inset-top)); position: sticky; top: 0; z-index: 20; }
+  .mb-brand { display: flex; align-items: center; gap: 10px; font-size: 22px; color: var(--or); font-weight: 800; }
+  .mb-icon { position: relative; background: transparent; border: 0; color: #fff; width: 46px; height: 46px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; }
+  .mb-icon .ic { width: 28px; height: 28px; }
+  .mb-icon:active { background: rgba(255, 255, 255, .15); }
+  .mb-icon .dot { position: absolute; bottom: 7px; right: 6px; width: 13px; height: 13px; border-radius: 50%; background: #35d070; border: 2px solid var(--dg); }
+  .mb-icon .dot.off { background: #ef5350; }
+  .mb-icon .dot.busy { background: var(--or); }
+  .mb-icon.spinning .ic { animation: spin 1s linear infinite; }
+
+  .content { padding: 0 0 110px; }
+  .view > .pgrid, .view > .panel, .view > .hero { margin-left: 12px; margin-right: 12px; }
+  .view > .pgrid { margin-left: 0; margin-right: 0; }
+  .pgrid { display: block; }
+  .pgrid > .panel { margin: 0 12px 14px; }
+  .view > .panel { margin-top: 14px; }
+  #view-new .pgrid { padding-top: 12px; }
+  .hero { margin-top: 12px; width: auto; height: auto; aspect-ratio: 3 / 1; }
+  .hero-ph b { font-size: 22px; }
+  .hero-ph span { font-size: 14px; }
+
+  /* البحث داخل كتلة خضراء مثل التصميم */
+  .msearch { background: var(--dg); margin: 0 0 14px; padding: 4px 14px 18px; border-radius: 0 0 28px 28px; }
+  .msearch .searchbar input { box-shadow: none; border: 0; height: 50px; border-radius: 16px; }
+  .msearch .searchbar .btn { display: none; }
+  .msearch .searchbar .sic { display: block; left: auto; right: 14px; }
+  .msearch .searchbar input { padding-right: 46px; padding-left: 16px; }
+  .plist { padding: 0 12px; }
+  .view-home-fix { display: none; }
+  .plist-head { align-items: center; }
+  .plist-head h2 { font-size: 22px; }
+  .plist-head .sub { display: none; }
+  .plist-head .btn { padding: 8px 12px; }
+  #sortLabel { display: none; }
+
+  /* بطاقات المنتجات كقائمة نصية */
+  .products { grid-template-columns: 1fr; gap: 10px; }
+  .pcard { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "info acts"; text-align: right; gap: 6px 12px; padding: 12px 14px; align-items: center; border-radius: 16px; }
+  .pinfo { grid-area: info; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; min-width: 0; }
+  .pname { font-size: 20px; }
+  .pmeta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .pcat { align-self: auto; }
+  .prow { justify-content: flex-start; }
+  .pactions { grid-area: acts; margin-top: 0; align-items: stretch; width: 128px; }
+  .pcard .stepper { display: flex; justify-content: space-between; }
+  .pcard .stepper input { flex: 1; width: 0; }
+  .pcard .add { font-size: 13px; padding: 8px 6px; gap: 4px; }
+
+  /* السلة العائمة + الدرج */
+  .cart { display: none; }
+  .fab { display: flex; position: fixed; left: 16px; bottom: calc(18px + env(safe-area-inset-bottom)); width: 64px; height: 64px; border-radius: 50%; border: 0; background: var(--or); color: #fff; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(245, 154, 35, .55); z-index: 40; }
+  .fab .ic { width: 30px; height: 30px; }
+  .fab .badge { position: absolute; top: -4px; right: -4px; min-width: 26px; height: 26px; padding: 0 6px; border-radius: 13px; background: var(--pg); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; }
+  .fab.bump { animation: bump .35s; }
+  @keyframes bump { 50% { transform: scale(1.18); } }
+  .drawer-scrim { display: block; position: fixed; inset: 0; background: rgba(0, 0, 0, .4); z-index: 44; }
+  .drawer { display: block; position: fixed; left: 0; right: 0; bottom: 0; max-height: 82vh; max-height: 82dvh; background: #fff; border-radius: 26px 26px 0 0; box-shadow: 0 -10px 40px rgba(0, 0, 0, .25); z-index: 45; padding: 8px 16px calc(16px + env(safe-area-inset-bottom)); overflow-y: auto; }
+  .drawer .grip { width: 56px; height: 5px; border-radius: 3px; background: #d4dcd7; margin: 4px auto 12px; }
+  .drawer .cart-head { background: none; color: var(--dg); padding: 0 0 10px; font-size: 19px; }
+  .drawer .cart-body { padding: 0; }
+  .drawer .cart-list { max-height: 34vh; }
+  .drawer .cart-actions { grid-template-columns: 1fr 1fr; }
+
+  /* صفحة الطلبية */
+  .fields { grid-template-columns: 1fr; }
+  .addrow { flex-wrap: wrap; }
+  .addrow .btn-green { order: 1; width: 100%; }
+  .osearch { order: 2; flex: 1 1 60%; }
+  .addrow .icon-only { order: 3; }
+  .totals-row { grid-template-columns: 1fr 1fr; }
+  .totals-row .notebox { grid-column: 1 / -1; }
+  .actions4 { grid-template-columns: 1fr 1fr; }
+  .set-grid { grid-template-columns: 1fr; }
+
+  /* الجدول يتحول إلى بطاقات بلا تمرير أفقي */
+  .otable thead { display: none; }
+  .otable, .otable tbody, .otable tr, .otable td { display: block; width: 100%; }
+  .otable tr { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "code name del" "cat cat cat" "note note note" "qty qty qty"; gap: 6px 10px; padding: 12px; border-bottom: 1px solid var(--ln); align-items: center; }
+  .otable td { border: 0; padding: 0; text-align: right; }
+  .otable td[data-l="idx"] { display: none; }
+  .otable td[data-l="code"] { grid-area: code; background: var(--orsoft); border-radius: 10px; padding: 4px 12px; text-align: center; }
+  .otable td[data-l="name"] { grid-area: name; font-size: 17px; }
+  .otable td[data-l="cat"] { grid-area: cat; color: var(--mu); font-size: 13px; }
+  .otable td[data-l="note"] { grid-area: note; }
+  .otable td[data-l="qty"] { grid-area: qty; }
+  .otable td[data-l="del"] { grid-area: del; }
+  .otable .stepper { width: 100%; justify-content: space-between; }
+  .otable .stepper input { flex: 1; width: 0; }
+  .tablewrap { border-radius: 12px; }
+
+  /* جداول السجل: نخفي الأعمدة الثانوية */
+  .ltable th.opt, .ltable td.opt { display: none; }
+
+  .modal { align-items: flex-end; padding: 0; }
+  .modal-card { width: 100%; max-height: 92vh; max-height: 92dvh; border-radius: 22px 22px 0 0; }
+  .toast { bottom: 100px; }
+}
+
+@media (max-width: 420px) {
+  .login-card { padding: 22px 18px 24px; border-radius: 24px; }
+  .pactions { width: 116px; }
+  .pname { font-size: 18px; }
+  .pcode { font-size: 19px; }
+  .actions4 { grid-template-columns: 1fr; }
+  .cart-actions .btn, .actions4 .btn { font-size: 14px; }
+}
+
+@media (max-width: 900px) {
+  .task-strip { margin: 12px 12px 0; }
+  .task { flex-direction: column; align-items: stretch; }
+  .tk-btns .tbtn { flex: 1; justify-content: center; }
+  #view-tasks .panel { margin-top: 12px; }
+}

@@ -1,0 +1,45 @@
+/* dark.css — الوضع الداكن */
+:root[data-theme="dark"] {
+  --bg: #0e1713; --wh: #16231c; --tx: #e6efe9; --mu: #93a89c; --ln: #263a2f;
+  --soft: #1d3327; --orsoft: #3a2c12; --redsoft: #3b1d1c; --sh: 0 4px 18px rgba(0, 0, 0, .35);
+  --pg: #1f9d57; --dg: #0a3a27;
+  color-scheme: dark;
+}
+[data-theme="dark"] .panel, [data-theme="dark"] .topbar, [data-theme="dark"] .user-btn, [data-theme="dark"] .drop,
+[data-theme="dark"] .pcard, [data-theme="dark"] .modal-card, [data-theme="dark"] .drawer, [data-theme="dark"] .login-card,
+[data-theme="dark"] .task, [data-theme="dark"] .wh-card, [data-theme="dark"] .stat-card, [data-theme="dark"] .results { background: var(--wh); }
+[data-theme="dark"] .searchbar input, [data-theme="dark"] .chip, [data-theme="dark"] .fld input, [data-theme="dark"] .fld select,
+[data-theme="dark"] .osearch input, [data-theme="dark"] .cart-note, [data-theme="dark"] .notebox textarea, [data-theme="dark"] .pg,
+[data-theme="dark"] .hist-tools select, [data-theme="dark"] .tbtn, [data-theme="dark"] .seg button, [data-theme="dark"] .field,
+[data-theme="dark"] .btn-outline, [data-theme="dark"] .pcard .add, [data-theme="dark"] .otable .stepper, [data-theme="dark"] .otable .note-in:focus { background: #1b2b22; color: var(--tx); }
+[data-theme="dark"] .field input { background: transparent; color: var(--tx); }
+[data-theme="dark"] .chip.active, [data-theme="dark"] .seg button.active, [data-theme="dark"] .pg.active, [data-theme="dark"] .pcard .add.in-cart { background: var(--pg); color: #fff; }
+[data-theme="dark"] .chip.active { background: var(--or); }
+[data-theme="dark"] .fld input[readonly], [data-theme="dark"] .crow .stepper, [data-theme="dark"] .notebox, [data-theme="dark"] .dl div,
+[data-theme="dark"] .otable .note-in, [data-theme="dark"] .crow-note, [data-theme="dark"] .pcat.none, [data-theme="dark"] .never span,
+[data-theme="dark"] .hb-t, [data-theme="dark"] .bar { background: #1f3126; color: var(--tx); }
+[data-theme="dark"] .ltable thead th { background: #1d3327; color: #bfe6cd; }
+[data-theme="dark"] .ltable tr.click:hover td { background: #1b2b22; }
+[data-theme="dark"] .pcode, [data-theme="dark"] .results .rc, [data-theme="dark"] .task-strip, [data-theme="dark"] .wh-note, [data-theme="dark"] .offline-note { color: #ffcf8a; }
+[data-theme="dark"] .task-strip { border-color: #5b4417; }
+[data-theme="dark"] .task.doing { background: #2e2412; }
+[data-theme="dark"] .task.done { background: #16301f; border-color: #2d6a45; }
+[data-theme="dark"] .task-done { background: #16301f; color: #7fe0a4; }
+[data-theme="dark"] .pill.done, [data-theme="dark"] .pill.ready { background: #16301f; color: #7fe0a4; }
+[data-theme="dark"] .pill.pending, [data-theme="dark"] .pill.preparing { background: #3a2c12; color: #ffcf8a; }
+[data-theme="dark"] .pill.new, [data-theme="dark"] .pill.sending { background: #12283d; color: #8cc4ff; }
+[data-theme="dark"] .pill.saved { background: #263238; color: #b0bec5; }
+[data-theme="dark"] .stat-tiles b, [data-theme="dark"] .stat-card h3 { color: #bfe6cd; }
+[data-theme="dark"] .btn-soft { background: #1d3327; color: #9fe0b9; }
+[data-theme="dark"] .btn-outline { border-color: #2f7a52; color: #7fe0a4; }
+[data-theme="dark"] .msearch { background: var(--dg); }
+[data-theme="dark"] .modal-actions .btn-dg { background: #0f4a32; }
+[data-theme="dark"] input::placeholder, [data-theme="dark"] textarea::placeholder { color: #70877a; }
+[data-theme="dark"] .drawer .grip { background: #3a5245; }
+[data-theme="dark"] .drawer .cart-head { color: #bfe6cd; }
+[data-theme="dark"] .fab .badge, [data-theme="dark"] .nav a.active .nav-badge { border-color: var(--wh); }
+[data-theme="dark"] .hero { filter: brightness(.9); }
+[data-theme="dark"] .toast { background: #2a3d33; }
+[data-theme="dark"] .tb-brand h1 { color: #7fe0a4; }
+[data-theme="dark"] .tb-brand p, [data-theme="dark"] .tb-date, [data-theme="dark"] .uname { color: var(--tx); }
+[data-theme="dark"] .tb-date .ic { color: var(--mu); }
